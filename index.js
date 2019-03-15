@@ -12,10 +12,13 @@ Async.mapLimit(a,40,(i,cb)=>{
 	request.get(url)
 	.on("error", function(err){
 		if (err) console.log(err)
-        process.exit(-1)
+        
 	})
 	.on('response', function(response) {
     		console.log(response.statusCode) // 200
+			if (response.statusCode == 403) {
+				process.exit(-1)
+			}
 		cb()
 	})
 },function(err,result){
