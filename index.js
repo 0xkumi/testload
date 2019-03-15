@@ -8,15 +8,14 @@ for (let i=0; i<10000;i++){
 }
 
 Async.mapLimit(a,40,(i,cb)=>{
-	console.log(i)
 	request.get(url)
 	.on("error", function(err){
 		if (err) console.log(err)
         
 	})
 	.on('response', function(response) {
-    		console.log(response.statusCode) // 200
 			if (response.statusCode == 403) {
+				console.log(i)
 				process.exit(-1)
 			}
 		cb()
