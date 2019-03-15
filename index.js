@@ -1,6 +1,6 @@
 const Async = require("async")
 const request = require("request")
-const url = process.args["2"]
+const url = process.argv["2"]
 
 let a= []
 for (let i=0; i<10000;i++){
