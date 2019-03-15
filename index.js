@@ -8,7 +8,7 @@ for (let i=0; i<10000;i++){
 }
 
 Async.mapLimit(a,40,(i,cb)=>{
-	request.get({url, followAllRedirects: false})
+	request.get({url, followAllRedirects: false,followRedirect: false})
 	.on("error", function(err){
 		if (err) console.log(err)
         
