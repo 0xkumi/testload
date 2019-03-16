@@ -8,8 +8,8 @@ for (let i = 0; i < 10000; i++) {
 }
 
 Async.mapLimit(a, 100, (i, cb) => {
-	var random = Math.floor(Math.random()*1000)
-	request.get({ url , headers: {"Range": `"${random}-${random}"`}})
+	var random = Math.floor(Math.random()*100000)
+	request.get({ url , headers: {"Range": `"${random}-${random+1}"`}})
 		.on("error", function (err) {
 			if (err) console.log(err)
 
